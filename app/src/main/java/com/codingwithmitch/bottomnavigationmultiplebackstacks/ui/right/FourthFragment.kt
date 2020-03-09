@@ -26,7 +26,7 @@ class FourthFragment : Fragment(R.layout.fragment_fourth) {
             Log.d(TAG, "FourthFragment: handleOnBackPressed")
             uiCommunicationListener
                 .getCustomBottomNavController()
-                .onBackPressed()
+                .delegateOnBackPressed(findNavController())
         }
     }
 

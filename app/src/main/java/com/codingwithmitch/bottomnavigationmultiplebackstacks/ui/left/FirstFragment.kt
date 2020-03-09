@@ -28,7 +28,7 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
             Log.d(TAG, "FirstFragment: handleOnBackPressed")
             uiCommunicationListener
                 .getCustomBottomNavController()
-                .onBackPressed()
+                .delegateOnBackPressed(findNavController())
         }
     }
 

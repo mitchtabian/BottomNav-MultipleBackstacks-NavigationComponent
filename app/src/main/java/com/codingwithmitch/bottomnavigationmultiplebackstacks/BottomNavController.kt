@@ -1,5 +1,6 @@
 package com.codingwithmitch.bottomnavigationmultiplebackstacks
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.os.Parcelable
@@ -62,8 +63,13 @@ class BottomNavController(
         return true
     }
 
-    fun onBackPressed() {
+    @SuppressLint("RestrictedApi")
+    fun delegateOnBackPressed(navController: NavController) {
         when {
+            navController.backStack.size > 2 -> {
+                navController.popBackStack()
+            }
+
             // Fragment back stack is empty so try to go back on the navigation stack
             navigationBackStack.size > 1 -> {
                 Log.d(TAG, "logInfo: BNC: backstack size > 1")

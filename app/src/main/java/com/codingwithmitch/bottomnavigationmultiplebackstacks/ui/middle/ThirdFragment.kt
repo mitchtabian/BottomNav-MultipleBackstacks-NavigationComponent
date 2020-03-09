@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 import com.codingwithmitch.bottomnavigationmultiplebackstacks.R
 import com.codingwithmitch.bottomnavigationmultiplebackstacks.UICommunicationListener
@@ -23,7 +24,7 @@ class ThirdFragment : Fragment(R.layout.fragment_third) {
             Log.d(TAG, "ThirdFragment: handleOnBackPressed")
             uiCommunicationListener
                 .getCustomBottomNavController()
-                .onBackPressed()
+                .delegateOnBackPressed(findNavController())
         }
     }
 
