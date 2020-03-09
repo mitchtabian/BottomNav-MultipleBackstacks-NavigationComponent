@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/middle_nav"
+    app:startDestination="@id/thirdFragment">
+
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.codingwithmitch.bottomnavigationmultiplebackstacks.ui.middle.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" />
+</navigation>

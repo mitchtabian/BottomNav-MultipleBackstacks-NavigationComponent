@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/right_nav"
+    app:startDestination="@id/fourthFragment">
+
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.codingwithmitch.bottomnavigationmultiplebackstacks.ui.right.FourthFragment"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_fourth" >
+        <action
+            android:id="@+id/action_fourthFragment_to_fifthFragment"
+            app:destination="@id/fifthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fifthFragment"
+        android:name="com.codingwithmitch.bottomnavigationmultiplebackstacks.ui.right.FifthFragment"
+        android:label="fragment_fifth"
+        tools:layout="@layout/fragment_fifth" >
+        <action
+            android:id="@+id/action_fifthFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment"
+            app:popUpTo="@+id/right_nav"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
